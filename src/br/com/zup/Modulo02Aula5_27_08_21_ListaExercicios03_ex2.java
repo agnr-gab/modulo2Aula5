@@ -18,17 +18,18 @@ public class Modulo02Aula5_27_08_21_ListaExercicios03_ex2 {
 
         Scanner leitorAbastecimento = new Scanner(System.in);
 
-        float valorTotal = 0F;
-        float valorDoDesconto = 0F;
+        double valorTotal = 0;
+        double valorDoDesconto = 0;
 
-        System.out.println("Bem-vinde! Siga as instruções para realizar o abastecimento");
-        System.out.println("Digite G para gasolina e E para etanol");
+
+        System.out.println("Bem-vinde! Siga as instruções para realizar o abastecimento:");
+        System.out.println("Digite G para gasolina e E para etanol, por favor!");
 
         String tipoDoCombustivel = leitorAbastecimento.nextLine(); //entrada do usuário qual combustivel
 
         System.out.println("Digite a quantidade de litros que deseja abastecer:");
 
-        float qtdLitros = leitorAbastecimento.nextFloat(); //quantidade de litros
+       double qtdLitros = leitorAbastecimento.nextDouble(); //quantidade de litros
 
         if (tipoDoCombustivel.equals("G") | tipoDoCombustivel.equals("g")) {
             valorTotal = qtdLitros * 2.5; // o valor a pagar
@@ -41,12 +42,18 @@ public class Modulo02Aula5_27_08_21_ListaExercicios03_ex2 {
                 valorDoDesconto = (0.06 * valorTotal); //acima de 20 litros, desconto de 6% por litro
             }
         } else if (tipoDoCombustivel.equals("E") | tipoDoCombustivel.equals("e")) {
-            if (qtdLitros <= 20 & qtdLitros > 0)
+            valorTotal = qtdLitros * 1.9; // o valor a pagar
+            if (qtdLitros <= 20 & qtdLitros > 0);
+            valorDoDesconto = 0.03 * valorTotal; // até 20 litros, desconto de 3% por litro
+
             //Cálculo do desconto de < 20L
         } else {
             // Calculo de desconto > 20L
         }
-
+        // mostrando as informações ao usuário
+        System.out.println("O valor total a pagar será R$: ");
+        double valorTotalComDescontos = valorTotal - valorDoDesconto;
+        System.out.println(valorTotalComDescontos + " reais" );
 
     }
 }
