@@ -53,7 +53,7 @@ public class Modulo02Aula5_27_08_21_ListaExercicios03_ex2 {
         // mostrando as informações ao usuário
         System.out.println("O valor total a pagar será R$: ");
         double valorTotalComDescontos = valorTotal - valorDoDesconto;
-        System.out.println(valorTotalComDescontos + " reais" );
+        System.out.println(Math.ceil(valorTotalComDescontos) + " reais" );
 
     }
 }
